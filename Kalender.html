@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /*Desktop first*/
+            #calenderwindow {
+                border: 2px solid black;
+                height: 600px;
+                width: 500px;
+            }
+
+            /* Mobile*/
+            @media (width<500px){
+            #calenderwindow {min-width: 90%;}
+            }
+
+            #header {
+                display: flex;
+                align-items: stretch;
+                height: 30px; 
+                border-bottom: 2px solid black;
+            }
+            /*
+            height:30px; notwendig weil aspect-ratio:1 in #close_button eine fixe Höhe braucht. Die implizit gesetzte Höhe durch 
+            display:flex -> (STANDARD) align-items:stretch -> height:100% für das close_button-Kindelement reicht aspectration nicht. 
+            */
+            
+            #name {
+                font-size: 20px;
+                margin: 5px;
+            }
+
+            #close_button {
+                margin-left: auto;
+                aspect-ratio: 1; 
+            }
+
+
+
+            #month_year_setter {
+                display:flex;
+                align-items: center;
+                border-bottom: 2px solid black;
+            }
+
+            #month_year {
+                font-size: 25px;
+                font-weight: bold;
+                margin: 10px;
+                margin-left: 5px;
+                margin-right: auto;
+            }
+
+            #month_forward{
+                margin-right: 5px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="calenderwindow">
+
+            <div id="header">
+                <span id="name">Huber Gerhard</span>
+                <button id="close_button">&#215</button>
+            </div>
+            
+            <div id="month_year_setter">
+                <span id="month_year">April 2026</span>
+                <button id="month_backward">&#9650</button>
+                <button id="month_forward">&#9660</button>
+            </div>
+
+
+
+        </div>
+    </body>
+</html>
+
